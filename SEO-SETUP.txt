@@ -1,0 +1,33 @@
+PIENORA WEBSITE — DEPLOYMENT & SEO NOTES
+========================================
+
+Branding
+- Homepage title, header, footer, loading message and developer copy use Pienora.
+- Admin, developer and authentication screens use Pienora.
+- A Pienora favicon and social sharing metadata are included.
+- Firebase project identifiers remain unchanged intentionally. They are backend configuration, not visible branding; changing them would break the existing Firebase connection.
+
+SEO included
+- Descriptive page title and meta description
+- Index/follow robots directives
+- Open Graph and Twitter sharing metadata
+- WebSite SearchAction structured data
+- Pienora-focused homepage copy and favicon
+
+IMPORTANT BEFORE GOOGLE SUBMISSION
+1. Deploy these files to the same hosting/repository that serves the live site.
+2. In GitHub Pages, make sure index.html is at the published root (not buried inside an extra folder).
+3. Replace {SITE_URL} in the JSON-LD SearchAction target with the actual full HTTPS homepage URL.
+4. Add a canonical link and create sitemap.xml using the actual final domain. Do not submit placeholder URLs.
+5. Verify the domain in Google Search Console and submit https://YOUR-DOMAIN/sitemap.xml.
+6. Make sure the hosting platform is publishing the latest commit. Clear browser cache or open the site in a private tab to check the new title and branding.
+
+Google ranking cannot be guaranteed. Indexing and ranking depend on the live domain, useful original app pages/content, crawlability, backlinks and time.
+
+
+PIENORA LOGO / GOOGLE FAVICON
+- The user's supplied square Pienora logo is configured as the PNG favicon, Apple touch icon, Open Graph image and Twitter image:
+  https://i.postimg.cc/cLkzvmp2/file-000000000378820786c8c650aaec7bc8.png
+- Keep this image URL publicly accessible. If it changes or expires, upload the PNG into the GitHub repository (for example /assets/pienora-icon.png) and update all matching links in index.html to that local path.
+- Google chooses favicon display automatically. After deployment, inspect the homepage in Google Search Console URL Inspection and request indexing. Google may take days or longer to refresh the search result icon. No ranking or display timing is guaranteed.
+- For best reliability, include the actual PNG in the repository and serve it from the same domain as the website. The current archive references the provided public image URL because the image host did not allow the build environment to download the image bytes.

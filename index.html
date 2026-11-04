@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1769E0">
+  <title>Pienora — Discover Apps, Games &amp; Digital Tools</title>
+  <meta name="description" content="Discover and explore Android apps, games, education resources and useful digital tools on Pienora. Find new apps, read reviews and download from developers.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  <meta name="application-name" content="Pienora">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pienora">
+  <meta property="og:title" content="Pienora — Discover Apps, Games &amp; Digital Tools">
+  <meta property="og:description" content="Explore apps, discover games and find useful digital tools on Pienora.">
+  <meta property="og:image" content="https://i.postimg.cc/cLkzvmp2/file-000000000378820786c8c650aaec7bc8.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pienora — Discover Apps, Games &amp; Digital Tools">
+  <meta name="twitter:description" content="Explore apps, games and useful digital tools on Pienora.">
+  <meta name="twitter:image" content="https://i.postimg.cc/cLkzvmp2/file-000000000378820786c8c650aaec7bc8.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://i.postimg.cc/cLkzvmp2/file-000000000378820786c8c650aaec7bc8.png">
+  <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/cLkzvmp2/file-000000000378820786c8c650aaec7bc8.png">
+  <link rel="icon" type="image/svg+xml" href="pienora-icon.svg">
+  <link rel="apple-touch-icon" sizes="512x512" href="https://i.postimg.cc/cLkzvmp2/file-000000000378820786c8c650aaec7bc8.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Pienora",
+    "description": "Discover apps, games and useful digital tools.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{SITE_URL}/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Pienora home">
+    <span class="brand-icon"><img src="https://i.postimg.cc/cLkzvmp2/file-000000000378820786c8c650aaec7bc8.png" alt="Pienora logo"></span>
+    <span>Pienora</span>
+  </a>
+
+  <div class="header-actions">
+    <button id="adminBtn" class="login-btn" hidden>Admin Dashboard</button>
+    <button id="loginBtn" class="login-btn">Sign in</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">YOUR APP DISCOVERY PLATFORM</p>
+    <h1>Discover something <span>amazing.</span></h1>
+    <p class="hero-description">
+      Explore apps, discover games and find tools that make your digital life better with Pienora.
+    </p>
+
+    <div class="search-box" role="button" aria-label="Open app search">
+      <span aria-hidden="true">⌕</span>
+      <input id="searchInput" type="search" autocomplete="off"
+        aria-label="Search apps" aria-expanded="false"
+        placeholder="Search apps, games, developers...">
+      <div id="searchSuggestions" class="search-suggestions" hidden></div>
+    </div>
+  </section>
+
+  <section id="searchPage" class="search-page" hidden aria-label="Search Pienora apps">
+    <div class="search-page-header"><button type="button" id="searchBack" aria-label="Back to home">←</button><div class="search-page-input-wrap"><span>⌕</span><input id="searchPageInput" type="search" placeholder="Search apps, games, developers..." autocomplete="off" aria-label="Search Pienora"></div></div>
+    <div id="searchDiscover" class="search-discover"><h2>Discover</h2><p>Find your next favourite app</p><div class="search-topics"><button data-topic="Games">🎮 Games</button><button data-topic="Tools">🛠 Tools</button><button data-topic="Education">📚 Education</button><button data-topic="Photography">📷 Photography</button></div><h3>Popular &amp; recent apps</h3><div id="searchPopular" class="search-results"></div></div>
+    <div id="searchResultsWrap" hidden><h2 class="search-results-title">Search results</h2><div id="searchResults" class="search-results"></div></div>
+  </section>
+
+  <section class="apps-section featured-section" id="featuredSection" hidden>
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">⭐ HANDPICKED HIGHLIGHTS</p>
+        <h2>Featured Apps</h2>
+      </div>
+      <span class="featured-label">PROMOTED</span>
+    </div>
+    <div id="featuredGrid" class="apps-grid"></div>
+  </section>
+
+  <section class="apps-section discover-section">
+    <div class="section-heading discover-heading">
+      <div>
+        <p class="eyebrow">EXPLORE PIENORA</p>
+        <h2>Discover Apps</h2>
+      </div>
+
+      <select id="sortSelect" aria-label="Sort apps">
+        <option value="latest">Latest</option>
+        <option value="popular">Popular</option>
+        <option value="name">A–Z</option>
+      </select>
+    </div>
+
+    <div class="category-list" id="categoryList">
+      <button class="category active" data-category="All">All</button>
+      <button class="category" data-category="Games">🎮 Games</button>
+      <button class="category" data-category="Tools">🛠 Tools</button>
+      <button class="category" data-category="Education">📚 Education</button>
+      <button class="category" data-category="Entertainment">🎬 Entertainment</button>
+      <button class="category" data-category="Photography">📷 Photography</button>
+      <button class="category" data-category="Productivity">⚡ Productivity</button>
+      <button class="category" data-category="Social">💬 Social</button>
+      <button class="category" data-category="Music & Audio">🎵 Music & Audio</button>
+      <button class="category" data-category="Personalization">🎨 Personalization</button>
+      <button class="category" data-category="Other">Other</button>
+    </div>
+
+    <div id="appsGrid" class="apps-grid">
+      <div class="loading">
+        <div class="loader"></div>
+        <p>Connecting to Pienora...</p>
+      </div>
+    </div>
+
+    <p id="emptyMessage" class="empty-message" hidden>
+      No apps found. Try another name or category.
+    </p>
+  </section>
+
+  <section class="developer-banner">
+    <div>
+      <p class="eyebrow">FOR DEVELOPERS</p>
+      <h2>Have an app to share?</h2>
+      <p>Bring your creation to Pienora.</p>
+    </div>
+    <button id="developerBtn">Get started →</button>
+  </section>
+</main>
+
+<footer>
+  <a class="brand footer-brand" href="#" aria-label="Pienora home">
+    <span class="brand-icon"><img src="https://i.postimg.cc/cLkzvmp2/file-000000000378820786c8c650aaec7bc8.png" alt="Pienora logo"></span>
+    Pienora
+  </a>
+  <p>Discover. Download. Develop.</p>
+  <p>© <span id="year"></span> Pienora</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#" id="navHome" class="nav-item selected">⌂<span>Home</span></a>
+  <a href="#categoryList" class="nav-item">▦<span>Categories</span></a>
+  <button id="navSearch" class="nav-item" type="button">⌕<span>Search</span></button>
+  <button id="navDeveloper" class="nav-item">＋<span>Develop</span></button>
+  <button id="navAccount" class="nav-item">◉<span>Account</span></button>
+</nav>
+
+<script type="module" src="app.js"></script>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
