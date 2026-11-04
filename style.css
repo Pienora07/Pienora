@@ -757,3 +757,30 @@ footer p {
 .bottom-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));}
 .nav-item{width:100%;font-size:22px}
 @media(max-width:650px){.search-page{padding-top:12px}.search-page-header{margin-bottom:20px}.search-page-input-wrap{height:48px}.search-topics button{padding:12px;font-size:13px}.nav-item span{font-size:10px}}
+
+/* Pienora app sharing */
+.app-card-actions{display:flex;align-items:center;gap:7px}
+.share-app,.details-share{border:1px solid #d8e3f3;color:var(--primary);background:#f4f8ff;padding:9px 11px;border-radius:9px;font-size:12px;font-weight:750;cursor:pointer}
+.details-share{float:right;margin:0 42px 8px 8px}
+.share-toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,12px);opacity:0;pointer-events:none;background:#14243b;color:#fff;padding:12px 18px;border-radius:12px;font-size:13px;font-weight:700;box-shadow:0 8px 28px #0003;z-index:10001;transition:.2s}
+.share-toast.visible{opacity:1;transform:translate(-50%,0)}
+@media(max-width:420px){.app-card-actions{gap:5px}.share-app,.view-app{padding:8px 9px;font-size:11px}}
+
+/* Pienora app details: dedicated Play Store-style page, not a popup */
+.details-overlay{position:fixed;inset:0;z-index:9998;background:#fff;display:block;padding:0;overflow-y:auto}
+.details-panel{background:#fff;width:100%;max-width:900px;min-height:100vh;max-height:none;overflow:visible;border-radius:0;padding:20px max(18px,calc((100vw - 820px)/2));margin:0 auto;color:var(--dark);box-shadow:none}
+.details-back{display:inline-flex;align-items:center;border:0;background:#edf3fc;color:var(--dark);border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700;margin:0 0 20px;cursor:pointer}
+.details-top{display:flex;gap:16px;align-items:center;min-width:0}
+.details-top>div{min-width:0;flex:1}
+.details-top h2{overflow-wrap:anywhere;margin:0}
+.details-icon{width:88px;height:88px;flex:0 0 88px;object-fit:cover;border-radius:20px;background:#edf2f8}
+.details-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:22px 0}
+.details-stat{min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:#f3f7fd;padding:13px 6px;border-radius:14px;text-align:center;color:var(--dark);border:0}
+.details-stat strong{display:block;font-size:19px;color:var(--dark)}
+.details-stat span{font-size:11px;color:var(--muted)}
+.details-share{cursor:pointer;font:inherit}
+.details-share:hover{background:#e7f0ff}
+.app-detail-open{overflow:hidden}
+.app-detail-open .topbar,.app-detail-open footer,.app-detail-open .bottom-nav{display:none!important}
+.app-card{cursor:pointer}
+@media(max-width:480px){.details-panel{padding:16px 14px}.details-icon{width:76px;height:76px;flex-basis:76px}.details-top{gap:12px}.details-top h2{font-size:20px}.details-stats{gap:6px}.details-stat{padding:11px 3px}.details-stat strong{font-size:16px}.details-stat span{font-size:10px}}
